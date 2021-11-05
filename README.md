@@ -10,4 +10,6 @@ Una vez en producción, el código se puede compilar en lenguaje nativo, por lo 
 En cuanto a la sintaxis, la de Dart es muy similar a lenguajes como JavaScript, Java y C ++, por lo que aprender Dart sabiendo uno de estos lenguajes es cuestión de horas.
 Además, Dart consta de un gran apoyo para la asincronía, y trabajar con generadores y iterables es extremadamente sencillo.
 
+Dart tambien es el lenguaje usado en el framework Flutter, que es un framework de desarrollo de aplicaciones móviles para Android y iOS :astonished:.
+
 ![dart logo](https://upload.wikimedia.org/wikipedia/commons/a/a4/Dart-logo-wordmark.svg)
