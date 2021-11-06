@@ -188,3 +188,47 @@ print(isNotActive!); // <--
 ```
 
 Eso significa que le estamos asegurando al compilador de Dart que ese valor no es `null`.
+
+## Tipos de datos: Listas
+
+Las listas en otros lenguajes son tambien conocidos como `Arrays` o `Collections`, pero una lista no es mas que un grupo de elementos que tienen que ver algo entre si. Es decir una especie de contenedor que tiene un monton de elementos comunes entre si.
+
+Por ejemplo:
+
+```dart
+var villanos = ['Lex', 'Red Skull', 'Joker'];
+```
+
+En este caso el compilador la infiere como una lista de strings. Pero ese no va a ser siempre el caso.
+
+```dart
+var villanos = ['Lex', 'Red Skull', 'Joker', 1, true, 2.3];
+```
+
+En Dart todo es un objeto, por lo que la lista anterior es una lista de objetos. `List<Object>`, de todas formas debemos evitar esto porque hace que el código sea ambiguo.
+
+Como es de costumbre, en Dart los elementos de una lista se empiezan a contar desde el 0.
+
+Puedo cambiar el valor de un elemento de la lista:
+
+```dart
+villanos[0] = 'Loki';
+```
+
+Si intento cambiar un elemento de la lista que se definio como `List<String>` con un elemento de tipo `int`:
+
+```dart
+villanos[0] = 1; // ERROR
+```
+
+Me da un error. Dart a fin de cuentas es un lenguaje de tipado estatico, aunque tiene todas las bondades de un lenguaje de tipado dinamico.
+
+Pero siempre es mejor ser claro al momento de definir un tipo de dato.
+
+En versiones anteriores se podia declarar una lista asi:
+
+```dart
+List<String> villanosDeprecated = new List();
+```
+
+Pero esto esta marcado como obsoleto y se recomienda usar la nueva forma de declarar una lista.
