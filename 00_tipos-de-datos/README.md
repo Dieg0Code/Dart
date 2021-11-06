@@ -147,3 +147,44 @@ main() {
   print(multilinea);
 }
 ```
+
+## Tipos de datos: Booleans
+
+Los Booleanos sirven para almacenar valores de verdadero o falso. Pero tambien depende, ya que podrian llegar a almacenar un `null`.
+
+Si acepta un nulo, tenemos un tercer valor en un booleano.
+
+Los booleanos se definen con `bool`:
+
+```dart
+bool esVerdadero = true;
+```
+
+Si quiero definir un booleano que puede ser `null`:
+
+```dart
+bool? esVerdadero;
+```
+
+Es importante dejar en claro si una variable es `null` o no.
+
+Tambien puedo negar un booleano con `!`:
+
+```dart
+bool isActive = true;
+bool isNotActive = !isActive; // isNotActive = false
+```
+
+Hay que tener ojo en donde va el `!` ya segun donde esté puede significar otra cosa.
+
+Por ejemplo:
+
+```dart
+
+bool isActive = true;
+bool? isNotActive = !isActive; // false
+
+print(isNotActive!); // <--
+```
+
+Eso significa que le estamos asegurando al compilador de Dart que ese valor no es `null`.
