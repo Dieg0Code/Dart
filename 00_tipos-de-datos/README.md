@@ -232,3 +232,75 @@ List<String> villanosDeprecated = new List();
 ```
 
 Pero esto esta marcado como obsoleto y se recomienda usar la nueva forma de declarar una lista.
+
+## Tipos de datos: Sets
+
+Otro tipo de dato muy interesante son los sets. Son muy parecidos a las listas, pero tienen una diferencia bien marcada, comparten varios metodos que normalmente no se usan en listas, pero que tambien estan en los sets.
+
+Se pueden definir asi:
+
+```dart
+var villanos = {'Lex', 'Red Skull', 'Joker'};
+```
+
+Es normal pensar de primeras que se trata de un objeto, pero en realidad es una lista de elementos.
+
+Al momento de imprimir un set, devuelve lo siguiente:
+
+```dart
+print(villanos); // {Lex, Red Skull, Joker}
+```
+
+Un metodo que comparten las listas y los sets es `add`:
+
+```dart
+List<String> villanos = ['Lex', 'Red Skull', 'Joker'];
+villanos.add('Loki');
+
+Set<String> villanos1 = {'Lex', 'Red Skull', 'Joker'};
+villanos1.add('Loki');
+```
+
+Con esto agregamos un elemento al final del listado.
+
+La diferencia está en que un set no permite elementos repetidos.
+
+Por ejemplo:
+
+```dart
+// Podemos agregar varias veces el mismo elemento en un list
+List<String> villanos = ['Lex', 'Red Skull', 'Joker'];
+villanos.add('Loki');
+villanos.add('Loki');
+villanos.add('Loki');
+```
+
+Y se agrega 3 veces el mismo elemento a la lista.
+
+Pero si intentamos hacer esto con un set:
+
+```dart
+Set<String> villanos = {'Lex', 'Red Skull', 'Joker'};
+villanos.add('Loki');
+villanos.add('Loki'); // no se agrega
+villanos.add('Loki'); // no se agrega
+```
+
+Solo se agrega una vez.
+
+¿Que pasa si quiero eliminar todos los elementos repetidos de una lista?, hay una forma de hacerlo en la que transformamos la lista en un set y luego volvemos a convertirla en lista.
+
+```dart
+main() {
+  List<String> villanos = ['Voldemort', 'Darth Vader', 'Sauron'];
+
+  villanos.add('Magneto');
+  villanos.add('Magneto');
+  villanos.add('Magneto');
+
+  print(villanos); // [Voldemort, Darth Vader, Sauron, Magneto, Magneto, Magneto]
+
+  var villanosSet = Set.from(villanos);
+  print(villanosSet.toList()); // [Voldemort, Darth Vader, Sauron, Magneto]
+}
+```
