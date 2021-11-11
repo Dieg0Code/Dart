@@ -218,6 +218,7 @@ villanos[0] = 'Loki';
 Si intento cambiar un elemento de la lista que se definio como `List<String>` con un elemento de tipo `int`:
 
 ```dart
+List<String> villanos = ['Lex', 'Red Skull', 'Joker'];
 villanos[0] = 1; // ERROR
 ```
 
@@ -235,7 +236,7 @@ Pero esto esta marcado como obsoleto y se recomienda usar la nueva forma de decl
 
 ## Tipos de datos: Sets
 
-Otro tipo de dato muy interesante son los sets. Son muy parecidos a las listas, pero tienen una diferencia bien marcada, comparten varios metodos que normalmente no se usan en listas, pero que tambien estan en los sets.
+Otro tipo de dato muy interesante son los sets. Son muy parecidos a las listas, pero tienen una diferencia bien marcada, comparten varios metodos que normalmente se usan en listas, pero que tambien estan en los sets.
 
 Se pueden definir asi:
 
@@ -304,3 +305,108 @@ main() {
   print(villanosSet.toList()); // [Voldemort, Darth Vader, Sauron, Magneto]
 }
 ```
+
+## Tipos de datos: Maps
+
+En otros lenguajes son conocidos como diccionarios o Objetos literales, pero el concepto en si es una variable o objeto que internamente tiene pares de valores, una **key** y un **value**.
+
+```dart
+var ironman = {
+  'nombre': 'Tony Stark',
+  'poder': 'Inteligencia y el dinero',
+  'edad': 40,
+};
+```
+
+Si declaro un map de esta forma su tipo de dato es `Map<String, Object>`, de tipo Object porque puede contener cualquier tipo de dato.
+
+Pero usualmente no es tán común que se use un map de esta forma, sino que por lo general el tipo de dato que se usa suele ser `Map<String, dynamic>`. aunque esto tampoco es del todo cierto ya que la **key** no tiene porque ser siempre un string, podria ser de tipo `Map<int, dynamic>`.
+
+```dart
+Map<int, dynamic> avengers = {
+  1: 'Thor',
+  2: 'Ironman',
+  3: 'Hulk',
+};
+```
+
+En el ejemplo anterior la key es de tipo `int`, pero el value puede ser cualquier tipo de dato, usamos solo String porque es mas común.
+
+Si imprimo el map, nos devuelve lo siguiente:
+
+```dart
+print(avengers); // {1: Thor, 2: Ironman, 3: Hulk}
+```
+
+Puede confundir y parecerse a un set por las llaves, pero la diferencia es que los `maps` tienen pares de valores, una llave y un valor.
+
+Si quiero acceder a un valor de un map, podemos hacerlo de la siguiente forma:
+
+```dart
+print(avengers[1]); // Thor
+```
+
+Si el map fuera de tipo `Map<String, dynamic>`:
+
+```dart
+Map<String, dynamic> ironman = {
+  'nombre': 'Tony Stark',
+  'poder': 'Inteligencia y el dinero',
+  'edad': 40,
+};
+
+print(ironman['nombre']); // Tony Stark
+```
+
+Siempre es `nombreMapa['llave']` y no `nombreMapa.llave`.
+
+Tambien pueden ser del tipo `Map<double, dynamic>`, no tiene mucho sentido pero se puede hacer.
+
+```dart
+Map<double, dynamic> avengers = {
+  1.0: 'Thor',
+  2.0: 'Ironman',
+  3.0: 'Hulk',
+};
+
+print(avengers[1.0]); // Thor
+```
+
+Un `map` no puede tener una llave repetida.
+
+```dart
+Map<String, dynamic> avengers = {
+  'nombre': 'Thor',
+  'nombre': 'Ironman', // error
+  'nombre': 'Hulk', // error
+};
+```
+
+Hay otra manera de definir los mapas:
+
+```dart
+Map<String, dynamic> capitanAmerica = new Map();
+
+capitanAmerica.addAll({
+  'nombre': 'Steve Rogers',
+  'poder': 'Super fuerza',
+});
+
+print(capitanAmerica['nombre']); // Steve Rogers
+```
+
+Si quisiera hacer:
+
+```dart
+Map<int, dynamic> ironman = {
+  1: 'Tony Stark',
+  2: 'Inteligencia y el dinero',
+  3: 40,
+};
+
+Map<String, dynamic> capitanAmerica = new Map();
+
+capitan.addAll( ironman ); // error
+```
+
+Me da error ya que el mapa capitanAmerica se define como `Map<String, dynamic>`, pero el mapa ironman es de tipo `Map<int, dynamic>`, lo que los hace incompatibles debido a que los tipos de datos no coinciden. Esto es una característica de Dart, muy util ya que evita errores de tipos.
