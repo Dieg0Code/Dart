@@ -56,3 +56,31 @@ List<String> personasConst = const ['Juan', 'Pedro', 'Maria'];
 ```
 
 Y funcionarian de la misma manera.
+
+¿Que ventajas tiene declarar algo como `final` si después puedo modificarlo?. La ventaja es que si queremos volver a declarar la variable no nos lo permitirá, ya que `final` no se puede reasignar.
+
+```dart
+personasFinal = []; // ERROR
+```
+
+Porque basicamente le estoy diciendo que apunte a un nuevo espacio de memoria, lo cual no está permitido.
+
+## Palabra reservada `late`
+
+Desde la versión 2.12 de Dart tenemos una nueva palabra reservada para la creación y utilización de variables, y es el `late`:
+
+Si declaramos una variable de la siguiente manera:
+
+```dart
+late String nombre;
+nombre = 'Diego';
+```
+
+La palabra reservada `late` sirve para indicar que vamos a declarar una variable pero que esta va a ser inicializada después.
+
+```dart
+late final String nombre;
+nombre = 'Diego';
+
+nombre = 'Juan'; // ERROR
+```
