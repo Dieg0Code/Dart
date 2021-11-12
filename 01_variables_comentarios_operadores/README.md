@@ -181,3 +181,43 @@ Podemos usarlo para por ejemplo poner una introducción a un archivo de código:
 ```
 
 Este tipo de comentarios nos ayudan a generar documentación de nuestros códigos, con la ayuda de dartdoc por ejemplo, así nos ahorramos tiempo luego cuando debamos documentar lo que hicimos.
+
+## Operadores aritméticos
+
+Un operador es un simbolo que le dice al compilador qué debe realizar una tarea matemática, relacional o lógica y debe de producir un resultado.
+
+Operadores matemáticos:
+
+```dart
+main() {
+  int a = 10 + 5; // + 15
+  a = 20 - 10; // - 10
+  a = 10 * 2; // * 20
+
+  double b = 10 / 2; // / 5.0
+  b = 10.0 % 3; // % 1 El sobrante de la división
+  b = -b // -expr es usado para cambiar el valor de la expresión
+  int c = 10 ~/ 3; // ~/ es un operador de división entera 
+}
+```
+
+Si quiero hacer una división tengo que usar el tipo de dato `double` porque el resultado podria ser un número con decimales.
+
+El operador `~/` es un operador de división entera, es decir, si quiero hacer una división que me de un resultado entero, debo usar este operador.
+
+Otros operadores:
+
+```dart
+main() {
+  double a = 10;
+  a++; // a = a + 1
+  a--; // a = a - 1
+  a += 5; // a = a + 5
+  a -= 5; // a = a - 5
+  a *= 2; // a = a * 2
+  a /= 2; // a = a / 2 
+  a %= 2; // a = a % 2
+}
+```
+
+Dart tambien al igual que todos los lenguajes tiene un paquete para trabajar con operaciones matematicas más complejas.
