@@ -44,7 +44,7 @@ Puedo añadir un nuevo elemento a la lista `personasFinal`, pero no se puede hac
 personasConst.add('Luis'); // ERROR Cannot add to an unmodifiable list
 ```
 
-No podemos añadir un elemento a una lista inmodificable. Esta es la principal diferencia entre `final` y `const`. 
+No podemos añadir un elemento a una lista inmodificable. Esta es la principal diferencia entre `final` y `const`.
 
 Si queremos declarar una lista que no va a ser modificada jamas podemos usar `const`, pero si queremos que sea modificable mediante los métodos de la lista, podemos usar `final`.
 
@@ -145,7 +145,7 @@ saludar(String nombre, String mensaje) {
 
 Esta es la forma que tiene Java de generar su documentación, pero en Dart esto se hace de otra manera.
 
-```dart	
+```dart
 /// Funcion para saludar
 /// Recibe un [nombre] se concatena con un [mensaje]
 saludar(String nombre, String mensaje) {

@@ -9,8 +9,7 @@ main() {
     'Pedro', // [1]
     // Esta es la tercera persona
     'Carlos' // [2]
-  }
-
+  };
 
   // Nombre: El nombre de la persona que quiero saludar
   // Mensaje: El mensaje que quiere decir
