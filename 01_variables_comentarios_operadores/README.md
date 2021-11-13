@@ -276,3 +276,74 @@ main() {
 ```
 
 Y así sucesivamente podemos poner tantas condiciones como queramos.
+
+## Operadores relacionales y por tipo
+
+Todos los operadores relacionales retornan un booleano, `true` o `false`, el null no es considerado un valor de retorno correcto para un booleano. Si bien un null puede estar asignado a una variable booleana, no es un valor que pueda ser retornado por un operador relacional.
+
+```dart
+main() {
+  // Operadores relacionales
+  // Todos reotornan un valor booleano
+
+  /**
+   * == Igual que
+   * != Diferente que
+   * 
+   * > Mayor que 
+   * < Menor que
+   * >= Mayor o igual que
+   * <= Menor o igual que
+   */
+
+  String persona1 = 'Fernando';
+  String persona2 = 'Alberto';
+
+  print(persona1 == persona2); // false
+  print(persona1 != persona2); // true
+}
+```
+
+Tambien puedo usar los operadores relacionales para comparar si una variable es mayor, menor, mayor o igual que otra.
+
+```dart
+main() {
+  int a = 20;
+  int b = 10;
+
+  print(a > b); // true
+  print(a < b); // false
+  print(a >= b); // true
+  print(a <= b); // false
+}
+```
+
+Si fuesen dos variables de tipo `String`, estos operadores no funcionarían, porque no se puede comparar de esta manera una variable de ese tipo, solo con números.
+
+Tambien tenemos el operador de tipo, el operador `is`, este operador nos permite saber si una variable es de un tipo especifico.
+
+```dart
+main() {
+  int a = 20;
+  String b = '20';
+
+  print(a is int); // true
+  print(b is int); // false
+  print(b is String); // true
+}
+```
+
+Tambien podemos negar el operador `is` con `is!`, por ejemplo:
+
+```dart
+main() {
+  int a = 20;
+  String b = '20';
+
+  print(a is! int); // false a es un int
+  print(b is! int); // true b is not int
+  print(b is! String); // false b es un String
+}
+```
+
+De esta manera podemos saber si una variable no es de un tipo especifico y actuar de acuerdo a eso.
