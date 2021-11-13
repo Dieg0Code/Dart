@@ -221,3 +221,58 @@ main() {
 ```
 
 Dart tambien al igual que todos los lenguajes tiene un paquete para trabajar con operaciones matematicas más complejas.
+
+## Operadores de asignación, condicional, relacional y de tipo.
+
+Hay un operadores que hemos estado usando constantemente, el operador `=`, este operador es el de asignación, sirve para asignar un valor a una variable.
+
+```dart
+main() {
+  int a = 10;
+  int? b;
+
+  b ??= 20; // Asignar el valor únicamente si la variable es nula
+
+  print(b); // 20
+}
+```
+
+Si imprimo la variable `b` en la consola, veremos que el valor es 20, esto es porque la variable `b` tenia el valor `null`, por lo que el operador `??=` lo inicializa con el valor 20.
+
+En el caso de que la variable ya estuviera inicializada, el operador `??=` no hace nada.
+
+### Operadores condicionales
+
+Nos sirven para determinar si una condición es verdadera o falsa, por ejemplo para determinar si algo es mayor que otro, o si algo es menor que otro, para ver si son iguales o distintos, etc.
+
+```dart
+main() {
+  int c = 23;
+  String resp = c > 25 ? 'Es mayor' : 'No es mayor'; // Si c es mayor que 25, entonces resp es 'Es mayor', sino 'No es mayor'. Esto es una condición ternaria.
+}
+```
+
+Otro ejemplo:
+
+```dart
+main() {
+  int a = 10;
+  int b = 10;
+
+  int d = b ?? a; // Si b es nulo, entonces d es a, sino d es b.
+}
+```
+
+Tambien puedo puedo poner otra condicion, por ejemplo:
+
+```dart
+main() {
+  int a = 10;
+  int b = 10;
+
+  int d = b ?? a; // Si b es nulo, entonces d es a, sino d es b.
+  int e = b ?? a ?? 0; //  Si b es nulo y a es nulo, entonces e es 0.
+}
+```
+
+Y así sucesivamente podemos poner tantas condiciones como queramos.
