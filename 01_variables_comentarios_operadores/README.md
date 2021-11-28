@@ -284,7 +284,7 @@ Todos los operadores relacionales retornan un booleano, `true` o `false`, el nul
 ```dart
 main() {
   // Operadores relacionales
-  // Todos reotornan un valor booleano
+  // Todos retornan un valor booleano
 
   /**
    * == Igual que
