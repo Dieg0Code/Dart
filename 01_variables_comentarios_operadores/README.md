@@ -35,7 +35,7 @@ const personasConst = ['Juan', 'Pedro', 'Maria'];
 A simple vista se ven iguales, pero al declarar una variable con `final` se puede cambiar el contenido de la misma, mientras que con `const` no se puede.
 
 ```dart
-personasFina.add('Luis');
+personasFinal.add('Luis');
 ```
 
 Puedo añadir un nuevo elemento a la lista `personasFinal`, pero no se puede hacer lo mismo con `personasConst`, ya que `const` no se puede modificar.
@@ -237,7 +237,7 @@ main() {
 }
 ```
 
-Si imprimo la variable `b` en la consola, veremos que el valor es 20, esto es porque la variable `b` tenia el valor `null`, por lo que el operador `??=` lo inicializa con el valor 20.
+Si imprimo la variable `b` en la consola, veremos que el valor es 20, esto es porque la variable `b` tenia el valor se declaro como `null`, por lo que el operador `??=` la inicializa con el valor 20.
 
 En el caso de que la variable ya estuviera inicializada, el operador `??=` no hace nada.
 
