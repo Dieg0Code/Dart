@@ -237,7 +237,7 @@ main() {
 }
 ```
 
-Si imprimo la variable `b` en la consola, veremos que el valor es 20, esto es porque la variable `b` se declaro como `null`, por lo que el operador `??=` la inicializa con el valor 20.
+Si imprimo la variable `b` en la consola, veremos que el valor es 20, esto es porque la variable `b` se considera como `null` al ser declarada con `?`, por lo que el operador `??=` la inicializa con el valor 20.
 
 En el caso de que la variable ya estuviera inicializada, el operador `??=` no hace nada.
 
